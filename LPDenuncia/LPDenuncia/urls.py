@@ -22,5 +22,6 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/',views.inicioView),
-    path('',include('denuncias.urls')),
+    path('api/v1.0/',include('denuncias.urls')),
+    # path('',include('denuncias.urls')),
 ]
