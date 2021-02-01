@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import PersonaDenuncinate,PersonaDesaparecida
+from .models import *
 class PersonaDenuncinateSerializar(serializers.ModelSerializer):
     class Meta: 
         model =  PersonaDenuncinate
@@ -9,3 +9,15 @@ class PersonaDesaparecidaSerializar(serializers.ModelSerializer):
     class Meta: 
         model =  PersonaDesaparecida
         fields = '__all__'
+class UltimoAvistamintoSerializar(serializers.ModelSerializer):
+    class Meta:
+        model = UltimoAvistamiento
+        fields='__all__'
+class SospechoSerializar(serializers.ModelSerializer):
+    class Meta: 
+        model = Sospecho
+        fields='__all__'
+class ReportarAparecimientoSerializar(serializers.ModelSerializer):
+     class Meta: 
+        model = ReportarAparecimiento
+        fields='__all__'

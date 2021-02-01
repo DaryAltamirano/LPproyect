@@ -1,12 +1,12 @@
 from django.db import models
 class PersonaDenuncinate(models.Model):
-    Nombre=models.CharField(max_length=120,verbose_name='Nombre del desaparecido')
-    Appellido=models.TextField(max_length=200,verbose_name='Apellido del desaparecido')
+    Nombre=models.CharField(max_length=120,verbose_name='Nombre del denunciante')
+    Appellido=models.TextField(max_length=200,verbose_name='Apellido del denunciante')
     Telefono=models.IntegerField()
-    TonoDePiel=models.CharField(max_length=120,verbose_name='Color de piel del desaparecido')
+    TonoDePiel=models.CharField(max_length=120,verbose_name='Color de piel del denunciante')
     Edad=models.IntegerField()
     ColorOjos=models.CharField(max_length=100,verbose_name='Color de los ojos')
-    Estatura=models.FloatField(max_length=4, verbose_name='Estatura del desapareido')
+    Estatura=models.FloatField(max_length=4, verbose_name='Estatura del denunciante')
     Relacion=models.TextField(max_length=200,verbose_name='La relacion entre el denunciante y el desaparecido')
     def __str__(self):
         return self.Nombre
@@ -18,8 +18,6 @@ class PersonaDesaparecida(models.Model):
     Edad=models.IntegerField()
     ColorOjos=models.CharField(max_length=100,verbose_name='Color de los ojos')
     Estatura=models.FloatField(max_length=4, verbose_name='Estatura del desapareido')
-    
-    Fotografia= models.ImageField(upload_to='Desaparecido/%Y/%m/%d', null=True, blank=True)
     PersonaDesaparecida=models.ManyToManyField(PersonaDenuncinate)
     def __str__(self):
         return self.Nombre

@@ -4,10 +4,13 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework import routers
-from .viewsets import PersonaDenuncinateViewSet,PersonaDesaparecidaViewSet
+from .viewsets import *
 router=routers.SimpleRouter()
 router.register('PersonaDenuncinate',PersonaDenuncinateViewSet)
 router.register('PersonaDesaparecida',PersonaDesaparecidaViewSet)
+router.register('Sospechoso',SospechoViewSet)
+router.register('UltimoAvistamiento',UltimoAvistamientoViewSet)
+router.register('RerportarAparecimiento',ReportarAparecimientoViewSet)
 urlpatterns = router.urls
 
 # app_name='denuncias'

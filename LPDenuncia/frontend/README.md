@@ -1,6 +1,6 @@
 # frontend
 
-> Para el proyecto de LP
+> A Vue.js project
 
 ## Build Setup
 
