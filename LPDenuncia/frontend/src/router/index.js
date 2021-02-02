@@ -5,13 +5,14 @@ import denunciante from '@/components/AppDenuncia/denunciante'
 import editdenunciante from '@/components/AppDenuncia/editdenunciante' 
 import deletedenunciante from '@/components/AppDenuncia/deletedenunciante'
 import newdenunciante from '@/components/AppDenuncia/newdenunciante'
+import Home from '@/components/AppDenuncia/Home'
 Vue.use(Router)
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'Home',
+      component: Home
     },{
       path: '/denunciante',
       name: 'denunciante',

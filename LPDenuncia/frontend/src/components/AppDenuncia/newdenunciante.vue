@@ -63,7 +63,7 @@
                     <div class="row">
                         <div class="col text-left">
                             <b-button type="submit" size="sm" variant="primary" class="btn-large-space">Crear</b-button>
-                            <b-button type="submit" size="sm" variant="primary" class="btn-large-space" :to="{name:'denunciante'}">Cancelar</b-button>
+                            <b-button type="" size="sm" variant="" class="btn-large-space" :to="{name:'denunciante'}">Cancelar</b-button>
                         </div>   
                     </div>
                     </form>
