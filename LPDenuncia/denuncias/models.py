@@ -34,7 +34,7 @@ class Sospecho(models.Model):
     Motivo=models.TextField(max_length=200,verbose_name='Motivo de sospecha')
     Sospecho=models.ForeignKey(PersonaDesaparecida, on_delete=models.CASCADE)
 
-class ReportarAparecimiento(models.Model):
+class ReportarAparecimiento(models.Model):  
     Condicion=models.TextField(max_length=200,verbose_name='Condicion de salud')
     Ropa=models.TextField(max_length=200,verbose_name='Condicion de salud')
     Fotografia= models.ImageField(upload_to='Aparecidos/%Y/%m/%d', null=True, blank=True)

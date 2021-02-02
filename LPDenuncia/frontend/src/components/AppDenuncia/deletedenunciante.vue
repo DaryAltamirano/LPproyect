@@ -39,8 +39,7 @@ export default {
             axios.get(path).then((response)=> {
                 this.element.Nombre=response.data.Nombre
                 this.element.Appellido=response.data.Appellido
-                //this.form.Telefono=response.data.Telefono
-                 this.element.Relacion=response.data.Relacion
+                this.element.Relacion=response.data.Relacion
             }).catch((error)=>{console.log(error)})
         },
         deleteDenunciante(){

@@ -11,7 +11,7 @@
         <div class ="col">
             <div class ="card">
                 <div class ="card-body">
-                    <form @Submit= "submi">
+                    <form @submit.prevent= "submi">
                     <div class ="form-group row">
                         <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label> 
                         <div class="col-sm-6">
@@ -27,19 +27,19 @@
                     <div class ="form-group row">
                         <label for="Telefono" class="col-sm-2 col-form-label">Telefono</label> 
                         <div class="col-sm-6">
-                            <input type="text" placeholder="Telefono" name="Telefono" class="form-control" v-model.trim="form.Telefono">
+                            <input type="number" placeholder="Telefono" name="Telefono" class="form-control" v-model.trim="form.Telefono">
                         </div>
                     </div>
                     <div class ="form-group row">
                         <label for="Edad" class="col-sm-2 col-form-label">Edad</label> 
                         <div class="col-sm-6">
-                            <input type="text" placeholder="Edad" name="Edad" class="form-control" v-model.trim="form.Edad">
+                            <input type="number" placeholder="Edad" name="Edad" class="form-control" v-model.trim="form.Edad">
                         </div>
                     </div>
                     <div class ="form-group row">
                         <label for="TonoDePiel" class="col-sm-2 col-form-label">Tono De Piel</label> 
                         <div class="col-sm-6">
-                            <input type="text" placeholder="TonoDePiel" name="TonoDePiel" class="form-control" v-model.trim="form.TonoDepiel">
+                            <input type="text" placeholder="TonoDePiel" name="TonoDePiel" class="form-control" v-model.trim="form.TonoDePiel">
                         </div>
                     </div>
                     <div class ="form-group row">
@@ -51,7 +51,7 @@
                     <div class ="form-group row">
                         <label for="Estatura" class="col-sm-2 col-form-label">Estatura</label> 
                         <div class="col-sm-6">
-                            <input type="text" placeholder="Estatura" name="Estatura" class="form-control" v-model.trim="form.Estatura">
+                            <input type="number" step="any" placeholder="Estatura" name="Estatura" class="form-control" v-model.trim="form.Estatura">
                         </div>
                     </div>
                     <div class ="form-group row">
@@ -101,7 +101,7 @@ export default {
                 this.form.Appellido=response.data.Appellido
                 this.form.Telefono=response.data.Telefono
                 this.form.Relacion=response.data.Relacion
-                this.form.TonoDepiel=response.data.TonoDepiel
+                this.form.TonoDePiel=response.data.TonoDepiel
                 this.form.ColorOjos=response.data.ColorOjos
                 this.form.Edad=response.data.Edad
                 this.form.Estatura=response.data.Estatura
