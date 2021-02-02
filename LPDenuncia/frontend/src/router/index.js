@@ -14,6 +14,10 @@ import verDenuncias from '@/components/AppDenuncia/verDenuncias'
 //GENERAL
 
 import Home from '@/components/AppDenuncia/Home'
+import desaparecido from '@/components/AppDenuncia/desaparecido'
+import editdesaparecido from '@/components/AppDenuncia/editdenunciante'
+import deletedesaparecido from '@/components/AppDenuncia/deletedesaparecido'
+import newdesaparecido from '@/components/AppDenuncia/newdesaparecido'
 Vue.use(Router)
 export default new Router({
   routes: [
