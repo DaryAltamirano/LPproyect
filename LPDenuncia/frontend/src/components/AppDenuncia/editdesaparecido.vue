@@ -3,7 +3,7 @@
     <div class = "row ">
         <div class= "col text-left">
             <h2>
-                Editar informacion denunciante
+                Editar informacion desaparecido
             </h2>
         </div>
     </div>
@@ -54,16 +54,10 @@
                             <input type="number " step="any" placeholder="Estatura" name="Estatura" class="form-control" v-model.trim="form.Estatura">
                         </div>
                     </div>
-                    <div class ="form-group row">
-                        <label for="Relacion" class="col-sm-2 col-form-label">Relacion</label> 
-                        <div class="col-sm-6">
-                            <textarea name="Relacion" class="form-control"  placeholder="Relacion" row="3" v-model.trim="form.Relacion"></textarea>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col text-left">
                             <b-button type="submit" size="sm" variant="primary" class="btn-large-space">Editar</b-button>
-                            <b-button size="sm" variant="" class="btn-large-space" :to="{name:'denunciante'}">Cancelar</b-button>
+                            <b-button size="sm" variant="" class="btn-large-space" :to="{name:'desaparecido'}">Cancelar</b-button>
                         </div>   
                     </div>
                     </form>
@@ -81,7 +75,7 @@ import swal from 'sweetalert'
 export default {
     data(){
         return {
-        denuncianteId:this.$route.params.denuncianteId,
+        denunciaId:this.$route.params.desaparecidoId,
         form: {
         Nombre:'',
         Appellido:'',
@@ -90,43 +84,42 @@ export default {
         Edad:0,
         ColorOjos:'',
         Estatura:0.0,
-        Relacion:'',
+        PersonaDesaparecida:[],
         }
        }
     },
         created() {
-            this.getDenunciante();
+            this.getDesaparecidos();
         },
      methods: {
         subir(){
-             const path = `http://127.0.0.1:8000/api/v1.0/PersonaDenuncinate/${this.denuncianteId}/`
+             const path = `http://127.0.0.1:8000/api/v1.0/PersonaDesaparecida/${this.denunciaId}/`
              axios.put(path,this.form).then((response)=> {
                 this.form.Nombre=response.data.Nombre
                 this.form.Appellido=response.data.Appellido
-                this.form.Telefono=parseInt(response.data.Telefono)
-                this.form.Relacion=response.data.Relacion
-                this.form.TonoDePiel=response.data.TonoDePiel
-                this.form.ColorOjos=response.data.ColorOjos
-                this.form.Edad=parseInt(response.data.Edad)
-                this.form.Estatura=parseFloat(response.data.Estatura)
-                swal("Datos del denunciante actualizado","","success")
-            }).catch((error)=>{
-                console.error(error)
-                swal("No se pudo editar los datos del denunciante","","error")
-            })
-        },
-        getDenunciante(){
-            const path =  `http://127.0.0.1:8000/api/v1.0/PersonaDenuncinate/${this.denuncianteId}/`
-            axios.get(path).then((response)=> {
-                this.form.Nombre=response.data.Nombre
-                this.form.Appellido=response.data.Appellido
                 this.form.Telefono=response.data.Telefono
-                this.form.Relacion=response.data.Relacion
                 this.form.TonoDePiel=response.data.TonoDePiel
                 this.form.ColorOjos=response.data.ColorOjos
                 this.form.Edad=response.data.Edad
                 this.form.Estatura=response.data.Estatura
-            }).catch((error)=>{swal("No se pudo traer los datos del denunciante","","error")})
+               swal("Se actualizo correctamente los datos del desaparecido","","error")
+            }).catch((error)=>{
+                console.error(error)
+                swal("No se pudo editar los datos del desaparecido","","error")
+            })
+        },
+        getDesaparecidos(){
+            const path =  `http://127.0.0.1:8000/api/v1.0/PersonaDesaparecida/${this.denunciaId}/`
+            axios.get(path).then((response)=> {
+                this.form.Nombre=response.data.Nombre
+                this.form.Appellido=response.data.Appellido
+                this.form.Telefono=response.data.Telefono
+                this.form.TonoDePiel=response.data.TonoDePiel
+                this.form.ColorOjos=response.data.ColorOjos
+                this.form.Edad=response.data.Edad
+                this.form.Estatura=response.data.Estatura
+                this.form.PersonaDesaparecida=response.data.PersonaDesaparecida
+            }).catch((error)=>{swal("No se pudo traer los datos del desaparecido","","error")})
         }
     }
 }

@@ -13,8 +13,10 @@
             <div class="col-md-12">
                 <b-table striped hover :items= "denunciantes" :fields="fields">
                 <template v-slot:cell(action)="data">
-                    <b-button size="sm" variant="primary" :to="{name:'Editardenunciante',params:{denuncianteId:data.item.id}}">Editar</b-button>
-                     <b-button size="sm" variant="danger" :to="{name:'deledenunciante',params:{denuncianteId:data.item.id}}">Eliminar</b-button>
+                    <b-button size="sm" variant="success" :to="{name:'newdesaparecido',params:{denuncianteId:data.item.id}}">Denunciar</b-button>
+                    <b-button size="sm" variant="primary" :to="{name:'editdenunciante',params:{denuncianteId:data.item.id}}">Editar</b-button>
+                    <b-button size="sm" variant="danger" :to="{name:'deletedenunciante',params:{denuncianteId:data.item.id}}">Eliminar</b-button>
+                    <b-button size="sm" variant="" :to="{name:'verDenuncias',params:{denuncianteId:data.item.id}}">Denuncias pendientes</b-button>
                 </template>
                 </b-table>
             </div>
@@ -31,8 +33,8 @@ export default {
            fields: [
             {key:'Nombre', label:'Nombre' },
             {key:'Appellido', label:'Apellido'},
-            {key:'Telefono', label:'Telefono'},
-            {key:'action', label:''},
+            {key:'Relacion', label:'Relacion'},
+            {key:'Action', label:''},
           ],
           denunciantes: [] 
       }

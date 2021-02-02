@@ -13,7 +13,7 @@
         <a class="nav-link text-dark" href="#">Aparicion</a>
       </li>
       <li class="nav-item active ">
-        <a class="nav-link text-dark" href="#">Desaparecido</a>
+       <b-button class="btn btn-info text-dark" :to="{name:'desaparecido'}">Desaparecido</b-button>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
